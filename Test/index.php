@@ -26,6 +26,12 @@
 					<div class="row">
 						<div class="col-md-12">
 							<h1> PHP opdrachten</h1>
+							<?php
+								if(isset($_POST['firstname'])) 
+									$firstname = $_POST['firstname'];
+								else
+									$firstname = null;
+							 ?>
 							<form action="" method="POST">
 								<label class="label-control" for ="firstname"> First Name:</label>
 								<input class="form-control" type ="text" id="firstname" name="firstname"/> 
