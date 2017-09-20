@@ -29,24 +29,104 @@
 							<?php
 								if(isset($_POST['firstname'])) 
 									$firstname = $_POST['firstname'];
-								else
-									$firstname = null;
+									else
+										$firstname = null;
+
+								if(isset($_POST['lastname']))
+									$lastname = $_POST['lastname'];
+									else
+										$lastname = null;
+
+								if(isset($_POST['email']))
+									$email = $_POST['email'];
+									else
+										$email = null;
+
+								if(isset($_POST['re-email']))
+									$reEmail = $_POST['re-email'];
+									else
+										$reEmail = null;
+
+								if(isset($_POST['password']))
+									$password = $_POST['password'];
+									else
+										$password = null;
+
 							 ?>
 							<form action="" method="POST">
-								<label class="label-control" for ="firstname"> First Name:</label>
-								<input class="form-control" type ="text" id="firstname" name="firstname"/> 
-								<label class="label-control"for ="lastname">Last Name:</label>
-								<input class="form-control" type ="text" id="lastname" name="lastname"/>
-								<label class="label-control"for ="email"> Your Email: </label>
-								<input class="form-control" type ="text" id="email" name="email"/>
-								<label class="label-control"for = "re-email">Re-enter Email: </label>
-								<input class="form-control"type ="text" id="Re-enter Email"/>
-								<label class="label-control"for ="password"> New Password: </label>
-								<input class="form-control"type ="password" id="New Password" name="password"/>
-								<input type="submit" name="verzenden" value="Sign Up"/>
+								<label class="label-control" for="firstname"> First Name:</label>
+								<input class="form-control" type="text" id="firstname" name="firstname"/> 
+								<label class="label-control" for="lastname">Last Name:</label>
+								<input class="form-control" type="text" id="lastname" name="lastname"/>
+								<label class="label-control" for="email"> Your Email: </label>
+								<input class="form-control" type="text" id="email" name="email"/>
+								<label class="label-control" for= "re-email">Re-enter Email: </label>
+								<input class="form-control" type="text" id="Re-enter Email" name="re-email"/>
+								<label class="label-control" for="password"> New Password: </label>
+								<input class="form-control" type="password" id="New Password" name="password"/>
+								<input type="submit" name="infoVerzenden" value="Sign Up"/>
 							</form>
+							<?php
+								if(isset($firstname) && isset($lastname) && isset($email) && isset($reEmail) && isset ($password)){
+									echo "het werk";
+								}
+							?>
 						</div>
 					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<br/>
+							<h2>If-Statement</h2>
+							<form action"" method="POST">
+								<label Class="label-control" for="GeldRemco"> Voer geld in: </label>
+								<input class="form-control" type="text" id="GeldRemco" name="BankRemco"/>
+								<input type="submit" name="geldVerzenden" value="Voer het bedrag in"/>
+							</form>
+							<?php
+								if(isset($_POST["BankRemco"]))
+								$BankRemco = $_POST['BankRemco'];
+								if($BankRemco >= 1400)
+								{
+									echo "Remco heeft genoeg geld <br/>";
+									echo " Uw heeft: $BankRemco";
+								}
+								else
+								{
+									echo "Remco moet door sparen";
+								}
+							?>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<br/>
+							<h2>If else</h2>
+							<form action="" method="POST">
+								<label Class="label-control" for="Bank"> Bank: </label>
+								<input Class="form-control" type="text" id="Bank" name="BankSaldo"/>
+								<input type="submit" name="Bankverzenden" value="Voer het bedrag in"/>
+							</form>
+							<?php
+								$BankSaldo = $_POST['BankSaldo'];
+								if($BankSaldo > 1500)
+								{
+									echo"u kunt de Panasonic kopen";
+								}
+								elseif($BankSaldo > 100 && $BankSaldo <= 1500)
+								{
+									Echo"U kunt de Sont of Philips kopen";
+								}
+								elseif($BankSaldo > 500 && $BankSaldo <= 1000)
+								{
+									echo"U kunt de LG of Samsung kopen";
+								}
+								else
+								{
+									echo "U moet nog even doorsparen.";
+								}
+							?>
+
+						</div>	
 				</div>
 			<footer>
 				<div class="container">
