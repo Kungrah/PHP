@@ -83,16 +83,18 @@
 								<input type="submit" name="geldVerzenden" value="Voer het bedrag in"/>
 							</form>
 							<?php
-								if(isset($_POST["BankRemco"]))
-								$BankRemco = $_POST['BankRemco'];
-								if($BankRemco >= 1400)
+								if(isset($_POST['BankRemco']))
 								{
-									echo "Remco heeft genoeg geld <br/>";
-									echo " Uw heeft: $BankRemco";
-								}
-								else
-								{
-									echo "Remco moet door sparen";
+									$BankRemco = $_POST['BankRemco'];
+									if($BankRemco >= 1400)
+									{
+										echo "Remco heeft genoeg geld <br/>";
+										echo " Uw heeft: $BankRemco";
+									}
+									else
+									{
+										echo "Remco moet door sparen";
+									}
 								}
 							?>
 						</div>
@@ -107,22 +109,25 @@
 								<input type="submit" name="Bankverzenden" value="Voer het bedrag in"/>
 							</form>
 							<?php
-								$BankSaldo = $_POST['BankSaldo'];
-								if($BankSaldo > 1500)
+								if(isset($_POST['BankSaldo']))
 								{
-									echo"u kunt de Panasonic kopen";
-								}
-								elseif($BankSaldo > 100 && $BankSaldo <= 1500)
-								{
-									Echo"U kunt de Sont of Philips kopen";
-								}
-								elseif($BankSaldo > 500 && $BankSaldo <= 1000)
-								{
-									echo"U kunt de LG of Samsung kopen";
-								}
-								else
-								{
-									echo "U moet nog even doorsparen.";
+									$BankSaldo = $_POST['BankSaldo'];
+									if($BankSaldo > 1500)
+									{
+										echo"u kunt de Panasonic kopen";
+									}
+									elseif($BankSaldo > 100 && $BankSaldo <= 1500)
+									{
+										Echo"U kunt de Sont of Philips kopen";
+									}
+									elseif($BankSaldo > 500 && $BankSaldo <= 1000)
+									{
+										echo"U kunt de LG of Samsung kopen";
+									}
+									else
+									{
+										echo "U moet nog even doorsparen.";
+									}
 								}
 							?>
 
