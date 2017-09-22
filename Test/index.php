@@ -73,6 +73,7 @@
 							?>
 						</div>
 					</div>
+
 					<div class="row">
 						<div class="col-md-12">
 							<br/>
@@ -99,13 +100,14 @@
 							?>
 						</div>
 					</div>
+
 					<div class="row">
 						<div class="col-md-12">
 							<br/>
 							<h2>If else</h2>
 							<form action="" method="POST">
-								<label Class="label-control" for="Bank"> Bank: </label>
-								<input Class="form-control" type="text" id="Bank" name="BankSaldo"/>
+								<label class="label-control" for="Bank"> Bank: </label>
+								<input class="form-control" type="text" id="Bank" name="BankSaldo"/>
 								<input type="submit" name="Bankverzenden" value="Voer het bedrag in"/>
 							</form>
 							<?php
@@ -130,16 +132,42 @@
 									}
 								}
 							?>
-
 						</div>	
-				</div>
-			<footer>
-				<div class="container">
+					</div>
+
 					<div class="row">
 						<div class="col-md-12">
+							<br/>
+							<h2>Switch</h2>
+							<form action="" method="POST">
+								<label class="" for="Kleuren"> Kleuren:</label>
+								<input class="form-control" type="text" id="kleurr" name="kleur"/>
+								<input type="submit" name="kleurverzenden" Value="Voer het bedrag in"/>
+							</form>
+							<?php
+								if(isset($_POST['kleur']))
+								{
+									switch($_POST['kleur'])
+									{
+										case "rood": echo "De kleur komt overeen met een Sucuk";
+										break;
+										case "groen": echo "De kleur komt overeen met een Kiwi";
+										break;
+										case "geel": echo "De kleur komt overeen met Banaan";
+										break;
+										case "oranje": echo "De kleur komt overeen met een Sinaasappel";
+										break;
+										case "paars": echo "De kleur komt overeen met een Druif";
+										break;
+
+										default: echo "We kunnen geen stukje fruit vinden";
+									}
+								}
+							?>
 						</div>
 					</div>
-				</div>
+					<br/>
+			<footer>
 			</footer>
 				<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
 				</script>
