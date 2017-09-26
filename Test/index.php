@@ -159,10 +159,29 @@
 										break;
 										case "paars": echo "De kleur komt overeen met een Druif";
 										break;
-
 										default: echo "We kunnen geen stukje fruit vinden";
 									}
 								}
+							?>
+						</div>
+					</div>
+					<br/>
+
+					<div class="row">
+						<div class="col-md-12">
+							<h2>For Loop</h2><br/>
+							<?php
+								for($variable = 1; $variable <= 10; $variable++){
+ 									echo $variable ."<br/>";				
+								}
+
+								 echo "<br/>";
+								 echo "<h2>Array uit lezen met een For loop</h2>";
+
+								$names = array('Glenn', 'Rens', 'Simone', 'Muhammed');
+									for($x = 0; $x <= count($names) -1; $x++){
+										echo $names[$x]. "<br/>";
+									}
 							?>
 						</div>
 					</div>
