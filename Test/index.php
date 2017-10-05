@@ -178,14 +178,14 @@
 
 					<div class="row">
 						<div class="col-md-12">
-							<h2>For Loop</h2><br>
+							<br><h2>For Loop</h2>
 							<?php
 								for($variable = 1; $variable <= 10; $variable++)
 								{
  									echo $variable ."<br>";				
 								}
 
-								 echo "<h2>Array uit lezen met een For loop</h2>";
+								 echo "<br><h2>Array uit lezen met een For loop</h2>";
 								$names = array('Glenn', 'Rens', 'Simone', 'Muhammed');
 									for($x = 0; $x <= count($names) -1; $x++)
 									{
@@ -196,7 +196,7 @@
 					</div>
 					<div class="row">
 						<div class="col-md-12">
-							<h2>For loop gebruiken met While Loop</h2><br>
+							<br><h2>For loop gebruiken met While Loop</h2>
 							<?php
 								$bankSaldo = 1;
 								while($bankSaldo <= 10)
@@ -234,7 +234,7 @@
 					</div>
 						<div class="row">
 							<div class="col-md-12">
-								<h2>Array</h2>
+							<br><h2>Array</h2>
 								<?php
 								$inhoudDoosje = array("Rood","Geel","Groen","Blauw");
 									echo $inhoudDoosje[0]."<br>";
@@ -243,7 +243,7 @@
 									echo $inhoudDoosje[3]."<br>";
 								?>
 
-								<h3>Array uitlezen met een For Loop</h3>
+								<br><h3>Array uitlezen met een For Loop</h3>
 								<?php
 								for($n = 0; $n < sizeof ($inhoudDoosje); $n++)
 									{
@@ -251,14 +251,14 @@
 									}
 								?>
 
-								<h3>Foreach</h3>
+								<br><h3>Foreach</h3>
 								<?php
 								foreach ($inhoudDoosje as $val){
 									echo $val."<br>";
 								}
 								?>
 
-								<h3>Associatief Array</h3>
+								<br><h3>Associatief Array</h3>
 								<?php
 								$persoon = array("Voornaam" => "Muhammed",
 												"Achternaam" => "Ozdemir",
@@ -273,7 +273,7 @@
 										echo $lab."<br>";
 									}
 								?>
-								<h2>Multidimensionaal Array</h2>
+								<br><h2>Multidimensionaal Array</h2>
 								<?php
 								$gegevens = array(array("Voornaam" => "Muhammed 1",
 														"Achternaam" => "Ozdemir 1",
@@ -298,6 +298,74 @@
 									}
 								?>
 						</div>
+					</div>
+					<div class ="row">
+						<div class="col-md-12">
+							<br><h2>Require en Include</h2>
+							<?php
+								include('contact.php');
+								require('contact.php');
+							?>	
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<br><h2>Function</h2>
+							<?php
+							function toonGegevens()// hier heb ik een functie gemaakt
+							{
+								echo "Ik heet Muhammed";
+							}
+							toonGegevens();//Hier haal ik de function die ik heb gemaakt op
+							?>
+
+							<br><h3>key in value geven</h3>
+							<?php
+							
+
+							function naamAanpassen($naam)
+							{
+								echo "Mijn naam is ".$naam;
+							}
+							naamAanpassen('Muhammed');
+							?>
+							
+							<br><h3>functie parameters</h3>
+							<?php
+							$getal1 = 10;
+							$getal2 = 5;
+							function optellen($getal1,$getal2) //Getallen tussen de () haakjes noemen we Parameters
+							{
+								$totaal = $getal1 + $getal2;
+								return $totaal;
+							}
+							$uitkomst = optellen($getal1,$getal2);
+							echo "Uitkomst is ".$uitkomst;
+							?>
+
+							<br><h3>Optionele parameters</h3>
+							<?php
+							function toonAntwoord($extra = NULL) // Parameter extra is nu Leeg (NULL)
+							{
+								echo "Kees de Groot <br>";
+								echo "Pietjestraat 1 <br>";
+								echo " postcode bl Oss <br>"; //dit gaat hij standaard uitvoeren
+
+								if(!empty($extra)) //De functie !empty betekend Niet leeg.
+								 //Zodra er een Parameter tijdens het oproepen meegegeven wordt gaat hij dit ook erbij uitvoeren.
+								{
+									echo "kees mail <br>";
+									echo "Telefoonnummer <br>";
+								}
+							}
+							toonAntwoord();	//Er wordt geen parameter meegegeven					
+							?>
+							<br>
+							<h5>Hier wordt een parameter mee gegeven</h5>
+							<?php
+							toonAntwoord('Parameter'); //Hier wordt een parameter ingevuld dus de waarde is niet meer NULL(LEEG).
+							?>
+						
 					</div>
 					<br>
 			<footer>
