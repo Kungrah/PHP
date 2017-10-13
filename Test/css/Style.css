@@ -1,3 +1,50 @@
 body {
-	background-color: pink;
+	background-color: #deefff;
+}
+.bedrijven {
+	background-color: white;
+}
+footer div.footerbg {
+	background: #f8f9fa;
+	position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+}
+
+footer div.footerbg div.container {
+  background: #f8f9fa;
+  color: #22313E;
+}
+
+footer div.footerbg div.container div.row:last-child div {
+  margin-top: 10px;
+}
+
+footer div.footerbg div.container div#hrline {
+  border-bottom: 1px solid #525C66;
+}
+
+footer div.footerbg div.container div.row div.col-md-6 {
+  height: 50px;
+  line-height: 50px;
+}
+
+footer div.footerbg div.container div.row div.col-md-6.text-left form {
+  margin: 0;
+}
+
+footer div.pink {
+	background-color: #666666;
+	border-bottom: 1px solid #B8C2CC;
+	position: fixed;
+    height: 100px;
+    bottom: 10%;
+    width: 100%;
+}
+
+footer div.pink div.container div.row div.col-md-12 p {
+  color: #fff;
+  text-align: center;
+  margin: 15px auto auto auto;
 }
