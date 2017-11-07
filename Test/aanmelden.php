@@ -25,7 +25,7 @@ if(
 		$_POST["login"]["wachtwoord"] == $result["wachtwoord"]
 	){
 		$_SESSION["inschrijver"] = $result;
-		header('Location:'. "index.php");exit;
+		header('Location:'. "producten.php");exit;
 	}else{
 		$roepop ="Uw wachtwoord komt niet overheen";
 	}

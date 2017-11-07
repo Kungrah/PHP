@@ -5,15 +5,14 @@ body {
 	background-color: white;
 }
 footer div.footerbg {
-	background: #f8f9fa;
-	position: fixed;
+	background: #d4d3d3;
     height: 100px;
     bottom: 0;
     width: 100%;
 }
 
 footer div.footerbg div.container {
-  background: #f8f9fa;
+  background: #e2e2e2;
   color: #22313E;
 }
 
@@ -32,19 +31,4 @@ footer div.footerbg div.container div.row div.col-md-6 {
 
 footer div.footerbg div.container div.row div.col-md-6.text-left form {
   margin: 0;
-}
-
-footer div.pink {
-	background-color: #666666;
-	border-bottom: 1px solid #B8C2CC;
-	position: fixed;
-    height: 100px;
-    bottom: 10%;
-    width: 100%;
-}
-
-footer div.pink div.container div.row div.col-md-12 p {
-  color: #fff;
-  text-align: center;
-  margin: 15px auto auto auto;
 }

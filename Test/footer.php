@@ -28,15 +28,6 @@
                 </div>
             </div>
         </div>
-            <div class="pink">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>Talhaozdemir.nl - Copyright &copy;2017 by Ozdemir</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 </footer>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous">
 </script>

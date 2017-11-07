@@ -40,7 +40,17 @@
 					isset($_POST['gebruiker']) && !empty($_POST['gebruiker']) &&
 					isset($_POST['wachtwoord']) && !empty($_POST['wachtwoord']) &&
 					$_POST['wachtwoord'] == $_POST['herhaalwachtwoord']
-				){ 								
+				){
+				
+				$con = new PDO("mysql:host=localhost;dbname=examen", 'root', '');// Hier controleer ik als de gebruikersnaam overeenkomt in de Databse
+				$username = $_POST['gebruiker'];
+
+				$query = $con->prepare('SELECT * FROM gebruikers WHERE gebruiker = :username');
+				$query->bindParam(':username', $username);
+				$query->execute();
+				if(!$query->rowCount() == 0){
+				 echo "<strong>Gebruiker bestaad al!</strong>";
+				} else{							
 					try
 					{
 						$database = new PDO("mysql:host=localhost;dbname=examen", 'root', '');// Hier maak ik een database connectie
@@ -57,15 +67,15 @@
 									":wachtwoord" => $_POST['wachtwoord'],
 									":rol" => 1
 							]);
-						echo "U bent geregistreed";
+						echo "<strong>U bent geregistreed</strong>";
+						}
+						catch(PDOException $e)
+						{
+							echo $e->getMessage();
+						}
 					}
-					catch(PDOException $e)
-					{
-						echo $e->getMessage();
-					}
-
 				} else {
-					echo "Voer uw gegevens in";
+					echo "<strong>Er is iets mis gegaan voer opnieuw uw gegevens in</strong>";
 				}
 			?>
 		</div>
