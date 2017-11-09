@@ -58,7 +58,7 @@ $req = $database->prepare("SELECT * FROM gebruikers WHERE id = :id ");//hier ber
 										":gebruiker" => $_SESSION['inschrijver']['gebruiker'],
 										":wachtwoord" => $_POST['wachtwoord']
 								]);
-							header('Location:'. "gebruiker.php");
+							header('Location:'. "index.php");
 						}
 						catch(PDOException $e)
 						{

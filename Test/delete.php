@@ -16,7 +16,25 @@ if(levelCheck(1)) {
             echo $e->getMessage();
         }
     }
+    elseif(isset($_GET['id'])) {
+        try
+        {
+            $database = new PDO("mysql:host=localhost;dbname=examen", 'root', '');// Hier maak ik een database connectie
+            $req = $database->prepare("DELETE FROM gebruikers WHERE id =:id");//hier bereid ik voor om de producten te verwijderen uit mijn database  
+                $req->execute([
+                    ":id" => $_GET['id']   
+                ]);
+            header('Location:'. "rol.php");exit;;
+        }
+        catch(PDOException $e)
+        {
+            echo $e->getMessage();
+        }  
+
+    }
 } 
+
+
 
         
       

@@ -1,9 +1,15 @@
 <?php
 include('header.php');
+if(!isset($_GET['pagina'])){header('Location:'. "producten.php?pagina=1");}
+$offset = ($_GET['pagina'] -1) * 8;
+$limit = 8 ;
 $database = new PDO("mysql:host=localhost;dbname=examen", 'root', '');
-	$req = $database ->prepare("SELECT * FROM artikel");
-	$req ->execute();
+	$req = $database ->prepare("SELECT * FROM artikel LIMIT :limit OFFSET :offset");
 	$artikelen = $req -> fetchall();
+	$req->bindValue(':limit', $limit, PDO::PARAM_INT);
+	$req->bindValue(':offset', $offset, PDO::PARAM_INT);
+	$req->execute();
+	$artikelen = $req->fetchAll();
 ?>
 
 <div class="container">
@@ -32,6 +38,10 @@ $database = new PDO("mysql:host=localhost;dbname=examen", 'root', '');
 				</div>
 			</div>
 		<?php }?>
+		<div class="col-md-12 pagination center-block">
+			  <a href="http://localhost:100/php/test/producten.php?pagina=<?php if($_GET['pagina'] <= 1){echo '1';} else {echo $_GET['pagina'] -1;}?>">&laquo; Vorige</a>
+			  <a href="http://localhost:100/php/test/producten.php?pagina=<?= $_GET['pagina'] + 1?>">Volgende &raquo;</a>
+			</div>
 	</div>
 </div>
 <?php
